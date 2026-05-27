@@ -71,4 +71,5 @@ void BMP280_filter_disable();
 void BMP280_filter_enable();
 void BMP280_filter_TOGGLE();
 void BMP280_sb_t_set(BMP280_StandbyTime_t sbt);
+void BMP280_ReadRegs(uint8_t reg, uint8_t *data, int len);
 #endif

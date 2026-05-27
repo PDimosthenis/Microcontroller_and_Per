@@ -10,7 +10,7 @@ static int32_t t_fine;
 static uint8_t current_filter = (BMP280_FILTER_X16 << 2); 
 static uint8_t filter_on = 1;
 
-// ??? ????????? S???: T?µ?ta? t? t????? Oversampling & Mode ????? ?a ??t?e? t?? a?s??t??a
+// Temp var to hold the ctrl_meas register and later  mask whatever we want 
 static uint8_t shadow_ctrl_meas = 0; 
 
 //Give the oversampling settings and mode that you want and will return an 8bit  to be written into the sensors ctrl_mes reg
@@ -63,7 +63,7 @@ void BMP280_Init(void) {
     //Initalizing the standby time at 0.5ms the filter setting at x16 and lsb 0 since we have i2c      
     BMP280_WriteReg(0xF5, BMP280_Build_Config(BMP280_STANDBY_0_5_MS, BMP280_FILTER_X16, 0x00)); 
     
-    // ??????O????: ?p????e?s? st? µetaß??t? S??? ?a? ????af? (??? I2C Read)
+    // Setting the oversample settings for temr, pressure and mode
     shadow_ctrl_meas = BMP280_Build_CtrlMeas(BMP280_OVERSAMP_X2, BMP280_OVERSAMP_X4, BMP280_MODE_NORMAL);
     BMP280_WriteReg(0xF4, shadow_ctrl_meas);  
 }
@@ -108,20 +108,20 @@ void BMP280_Read_Temp_Press(float *temperature, float *pressure) {
     uint32_t press_raw = bmp280_compensate_P_int64(adc_P);
 
     *temperature = temp_raw / 100.0f;
-    // ??????O????: ??a??es? µe 100 ??a ?a p????µe s?st? hPa (p? 1013.25)
+    // Divide by 100 to take hpa and not pa
     *pressure = (press_raw / 256.0f) / 100.0f; 
 }
  
 void BMP280_change_mode(BMP280_Mode_t mode){
-    // ??????O????: ??at?µe ta oversampling ?d?a ?a? a??????µe µ??? t? Mode (2 lsb)
+    // and it with 11111100 to clear the mode bits and or the new mode
     shadow_ctrl_meas = (shadow_ctrl_meas & 0xFC) | mode; 
     BMP280_WriteReg(0xF4, shadow_ctrl_meas); 
 }
 
 void BMP280_filter_disable(){
     uint8_t config;
-    BMP280_ReadRegs(0xF5, &config, 1);
-    current_filter = config & 0x1C; 
+    BMP280_ReadRegs(0xF5, &config, 1); 
+    current_filter = config & 0x1C;  
     config = (config & 0xE3); 
     BMP280_WriteReg(0xF5, config); 
 }
@@ -144,7 +144,7 @@ void BMP280_filter_TOGGLE(){
         filter_on = 1;
     }
 }
-
+//Probably not nessecery since its gonna be fixed
 void BMP280_sb_t_set(BMP280_StandbyTime_t sbt){
     uint8_t config;
     BMP280_ReadRegs(0xF5, &config, 1);

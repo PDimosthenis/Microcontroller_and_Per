@@ -1,13 +1,13 @@
 Dependencies for Project 'lab_03', Target 'Target_1': (DO NOT MODIFY !)
 CompilerVersion: 6240000::V6.24::ARMCLANG
-F (.\main.c)(0x6A148A51)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-ID:/Arm/Packs/ARM/CMSIS-Compiler/2.2.0/include-ID:/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-ID:/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_-o ./objects/main.o -MMD)
+F (.\main.c)(0x6A16B3E8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-ID:/Arm/Packs/ARM/CMSIS-Compiler/2.2.0/include-ID:/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-ID:/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_-o ./objects/main.o -MMD)
 I (drivers\platform.h)(0x57B2C0A4)
 I (D:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\STM32F4xx.h)(0x69F20BD0)
 I (D:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x69F20BD0)
 I (D:\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include\core_cm4.h)(0x69F205F4)
 I (D:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x69F20BD0)
 I (drivers\i2c.h)(0x5739E7F2)
-I (drivers\bmp280.h)(0x6A14620F)
+I (drivers\bmp280.h)(0x6A162D72)
 I (drivers\delay.h)(0x646E1CC3)
 I (drivers\uart.h)(0x5739E82A)
 I (drivers\gpio.h)(0x6246D943)
@@ -130,10 +130,10 @@ I (drivers\STM32F4xx_RCC.h)(0x57616B12)
 I (drivers\STM32F4xx_USART.h)(0x57616B12)
 I (drivers\STM32F4xx_GPIO.h)(0x57616B12)
 F (.\drivers\uart.h)(0x5739E82A)()
-F (.\drivers\bmp280.c)(0x6A14883F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-ID:/Arm/Packs/ARM/CMSIS-Compiler/2.2.0/include-ID:/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-ID:/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_-o ./objects/bmp280.o -MMD)
-I (drivers\bmp280.h)(0x6A14620F)
+F (.\drivers\bmp280.c)(0x6A162D2E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-ID:/Arm/Packs/ARM/CMSIS-Compiler/2.2.0/include-ID:/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-ID:/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_-o ./objects/bmp280.o -MMD)
+I (drivers\bmp280.h)(0x6A162D72)
 I (drivers\delay.h)(0x646E1CC3)
-F (.\drivers\bmp280.h)(0x6A14620F)()
+F (.\drivers\bmp280.h)(0x6A162D72)()
 F (.\drivers\pressure_queue.c)(0x6A147516)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-ID:/Arm/Packs/ARM/CMSIS-Compiler/2.2.0/include-ID:/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-ID:/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_-o ./objects/pressure_queue.o -MMD)
 I (drivers\pressure_queue.h)(0x6A146248)
 F (.\drivers\pressure_queue.h)(0x6A146248)()

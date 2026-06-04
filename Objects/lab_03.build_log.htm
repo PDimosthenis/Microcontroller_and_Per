@@ -5,11 +5,11 @@
 <h2>Tool Versions:</h2>
 IDE-Version: µVision V5.43.1.0
 Copyright (C) 2025 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Dimosthenis Papathanasiou, aristotle university of thessaloniki, LIC=----
+License Information: Andreas Skoufakis, None, LIC=----
  
 Tool Versions:
 Toolchain:       MDK-Lite  Version: 5.43.0.0
-Toolchain Path:  D:\Keil_v5\ARM\ARMCLANG\Bin
+Toolchain Path:  C:\Users\ANDREW\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin
 C Compiler:      ArmClang.exe V6.24
 Assembler:       Armasm.exe V6.24
 Linker/Locator:  ArmLink.exe V6.24
@@ -21,22 +21,16 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.3.1.0
 Dialog DLL:      TCM.DLL V1.56.6.0
  
 <h2>Project:</h2>
-D:\micro_keil\lab_03\lab_03.uvprojx
-Project File Date:  05/25/2026
+C:\Users\ANDREW\Documents\Keil_projects\LAB_03_Final\Microcontroller_and_Per\lab_03.uvprojx
+Project File Date:  05/28/2026
 
 <h2>Output:</h2>
-*** Using Compiler 'V6.24', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
+*** Using Compiler 'V6.24', folder: 'C:\Users\ANDREW\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target_1'
-main.c(27): warning: In file included from...
-./drivers\platform.h(18): warning: non-portable path to file '<stm32f4xx.h>'; specified path differs in case from file name on disk [-Wnonportable-include-path]
-   18 | #include <STM32F4xx.h>
-      |          ^~~~~~~~~~~~~
-      |          <stm32f4xx.h>
-1 warning generated.
-compiling main.c...
+compiling bmp280.c...
 linking...
-Program Size: Code=25160 RO-data=1616 RW-data=12 ZI-data=1872  
-".\Objects\lab_03.axf" - 0 Error(s), 1 Warning(s).
+Program Size: Code=25176 RO-data=1616 RW-data=12 ZI-data=1872  
+".\Objects\lab_03.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -47,10 +41,10 @@ Package Vendor: ARM
    * Component: CORE Version: 6.2.0
 
 Package Vendor: ARM
-                https://www.keil.com/pack/ARM.CMSIS-Compiler.2.2.0.pack
-                ARM::CMSIS-Compiler@2.2.0
+                https://www.keil.com/pack/ARM.CMSIS-Compiler.2.1.0.pack
+                ARM::CMSIS-Compiler@2.1.0
                 CMSIS Compiler extensions for Arm Compiler, GCC, Clang, and IAR Compiler
-   * Component: CORE Version: 1.2.0
+   * Component: CORE Version: 1.1.0
    * Component: ITM Version: 1.1.0
    * Component: ITM Version: 1.1.0
    * Component: ITM Version: 1.1.0
@@ -59,30 +53,30 @@ Package Vendor: ARM
    * Component: STDOUT Version: 1.1.0
 
 Package Vendor: Keil
-                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.0.pack
-                Keil::STM32F4xx_DFP@2.17.0
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.1.pack
+                Keil::STM32F4xx_DFP@2.17.1
                 STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
    * Component: Startup Version: 2.6.3
 
 <h2>Collection of Component include folders:</h2>
   ./RTE/_Target_1
-  D:/Arm/Packs/ARM/CMSIS-Compiler/2.2.0/include
-  D:/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include
-  D:/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+  C:/Users/ANDREW/AppData/Local/Arm/Packs/ARM/CMSIS-Compiler/2.1.0/include
+  C:/Users/ANDREW/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include
+  C:/Users/ANDREW/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ARM::CMSIS-Compiler:CORE@1.2.0
-      Source file:   source/core/armcc/retarget_io.c
+   * Component: ARM::CMSIS-Compiler:CORE@1.1.0
+      Source file:   source/armcc/retarget_io.c
 
    * Component: ARM::CMSIS-Compiler:STDERR:ITM@1.1.0
-      Source file:   source/stderr/stderr_itm.c
+      Source file:   source/stderr_itm.c
 
    * Component: ARM::CMSIS-Compiler:STDIN:ITM@1.1.0
-      Source file:   source/stdin/stdin_itm.c
+      Source file:   source/stdin_itm.c
 
    * Component: ARM::CMSIS-Compiler:STDOUT:ITM@1.1.0
-      Source file:   source/stdout/stdout_itm.c
+      Source file:   source/stdout_itm.c
 
    * Component: ARM::CMSIS:CORE@6.2.0
 
@@ -97,8 +91,8 @@ Package Vendor: Keil
 
    * Component: Keil::Device:Startup@2.6.3
       Source file:   MDK/Device/Source/ARM/STM32F411xx_OPT.s
-      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
       Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f411xe.s
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
 Build Time Elapsed:  00:00:01

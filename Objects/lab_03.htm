@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\lab_03.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\lab_03.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Wed May 27 12:06:12 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Thu Jun  4 16:11:15 2026
 <BR><P>
 <H3>Maximum Stack Usage =        896 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1403,7 +1403,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[d6]"></a>check_alarm_conditions</STRONG> (Thumb, 324 bytes, Stack size 24 bytes, main.o(.text.check_alarm_conditions))
+<P><STRONG><a name="[d6]"></a>check_alarm_conditions</STRONG> (Thumb, 332 bytes, Stack size 24 bytes, main.o(.text.check_alarm_conditions))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = check_alarm_conditions &rArr; uart_print &rArr; uart_tx &rArr; USART_GetFlagStatus
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_print
@@ -1493,7 +1493,7 @@ Global Symbols
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMP280_ReadRegs
 </UL>
 
-<P><STRONG><a name="[81]"></a>main</STRONG> (Thumb, 1672 bytes, Stack size 624 bytes, main.o(.text.main))
+<P><STRONG><a name="[81]"></a>main</STRONG> (Thumb, 1684 bytes, Stack size 624 bytes, main.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 896 + Unknown Stack Size
 <LI>Call Chain = main &rArr; calc_h &rArr; __hardfp_pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>

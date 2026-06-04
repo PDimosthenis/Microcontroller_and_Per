@@ -64,7 +64,7 @@ void BMP280_Init(void) {
     BMP280_WriteReg(0xF5, BMP280_Build_Config(BMP280_STANDBY_0_5_MS, BMP280_FILTER_X16, 0x00)); 
     
     // Setting the oversample settings for temr, pressure and mode
-    shadow_ctrl_meas = BMP280_Build_CtrlMeas(BMP280_OVERSAMP_X2, BMP280_OVERSAMP_X4, BMP280_MODE_NORMAL);
+    shadow_ctrl_meas = BMP280_Build_CtrlMeas(BMP280_OVERSAMP_X2, BMP280_OVERSAMP_X16, BMP280_MODE_NORMAL);
     BMP280_WriteReg(0xF4, shadow_ctrl_meas);  
 }
 

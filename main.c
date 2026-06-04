@@ -130,7 +130,8 @@ void check_alarm_conditions() {
         (rate_drop_alarm)) {               
         
         alarm_flag = 1;
-        gpio_set(PC_7, 1); // Set the LED
+        gpio_set(PC_7, 1); // Set the OUTER LED
+				gpio_set(P_LED_R, 0); //Disable boards led	
         uart_print("\r\n [ALERT] Extreme Conditions Detected!\r\n");
     }
 }
@@ -158,6 +159,9 @@ int main() {
     
     // LED Initialization
     gpio_set_mode(PC_7, Output);
+	  
+	  //ON BOARD LED Initialization
+	  gpio_set_mode(P_LED_R, Output);
     
     // BOARD_BUTTON Initialization
     gpio_set_mode(PC_13, PullDown);
@@ -213,6 +217,8 @@ int main() {
                     alarm_flag = 0;
                     uart_print("Alarm stopped\r\n");
                     mode_flag = NORMAL; // Return to Normal function
+									  gpio_set(PC_7, 0); //Close outter led
+									  gpio_set(P_LED_R, 1); //Start blinking with led on
                 }
             }
             // Continuously print msg while in alarm mode
@@ -272,7 +278,7 @@ int main() {
                     BMP280_change_mode(BMP280_MODE_FORCED);
                     forced_blink_tmr = cnt_50ms;
                     forced_update_tmr = cnt_50ms;
-                    gpio_set(PC_7, 1); 
+                    gpio_set(P_LED_R, 1); 
                 } 
                 else if(mode_flag == FORCED) {
                     uart_print("Entered NORMAL MODE\r\n");
@@ -281,7 +287,7 @@ int main() {
                     BMP280_sb_t_set(BMP280_STANDBY_0_5_MS);
                     normal_blink_tmr = cnt_50ms;
                     normal_update_tmr = cnt_50ms;
-                    gpio_set(PC_7, 1);
+                    gpio_set(P_LED_R, 1);
                 }
             }
 
@@ -304,7 +310,7 @@ int main() {
                 
                 if((cnt_50ms - normal_blink_tmr) >= 5) { // Blink every 250ms (5 * 50ms)
                     normal_blink_tmr = cnt_50ms;  
-                    gpio_toggle(PC_7); 
+                    gpio_toggle(P_LED_R); 
                 }
                 
                 if((cnt_50ms - normal_update_tmr) >= 20) { // Update every 1 second (20 * 50ms)
@@ -329,7 +335,7 @@ int main() {
                 // Toggle LED every 2 seconds (40 * 50ms)         
                 if((cnt_50ms - forced_blink_tmr) >= 40) {
                     forced_blink_tmr = cnt_50ms; 
-                    gpio_toggle(PC_7);
+                    gpio_toggle(P_LED_R);
                 }
                 
                 // Awake sensor before the 5 second mark to complete measurement
